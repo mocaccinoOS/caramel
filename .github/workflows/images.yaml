@@ -1,0 +1,114 @@
+---
+name: 'Build docker images'
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - tag: "gimp"
+            dockerfile: "gimp"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/gimp --app-store '$HOME/.mos-app/gimp' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "teams"
+            dockerfile: "teams"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/teams --app-store '$HOME/.mos-app/teams' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "zoom"
+            dockerfile: "zoom"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/zoom --app-store '$HOME/.mos-app/zoom' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "skype"
+            dockerfile: "skype"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/skype --app-store '$HOME/.mos-app/skype' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+  
+          - tag: "inkscape"
+            dockerfile: "inkscape"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/inkscape --app-store '$HOME/.mos-app/inkscape' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "pidgin"
+            dockerfile: "pidgin"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/pidgin --app-store '$HOME/.mos-app/pidgin' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "rsuite"
+            dockerfile: "rsuite"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/rstudio --app-store '$HOME/.mos-app/rstudio' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "google-chrome"
+            dockerfile: "google-chrome"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/google-chrome --app-store '$HOME/.mos-app/google-chrome' --app-mounts /etc/resolv.conf --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "teamviewer"
+            dockerfile: "teamviewer"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/teamviewer --app-store '$HOME/.mos-app/teamviewer' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "vlc"
+            dockerfile: "vlc"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/vlc --app-store '$HOME/.mos-app/vlc' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "firefox"
+            dockerfile: "firefox"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/firefox --app-store '$HOME/.mos-app/firefox' --app-mounts /etc --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "thunderbird"
+            dockerfile: "thunderbird"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/thunderbird --app-store '$HOME/.mos-app/thunderbird' --app-mounts /etc --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - tag: "kodi"
+            dockerfile: "kodi"
+            platforms: "linux/amd64"
+            bundler_opts: "--entrypoint /usr/bin/kodi --app-store '$HOME/.mos-app/kodi' --app-mounts /home --app-mounts /etc --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+            go-version: '^1.17'
+      - name: Build and install deps
+        run: |
+           wget https://github.com/mudler/poco/releases/download/v0.1/poco-v0.1-Linux-x86_64.tar.gz
+           tar xvf poco-v0.1-Linux-x86_64.tar.gz
+           sudo cp -rfv poco /usr/bin/
+      - name: Build
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: ./${{ matrix.dockerfile }}
+          file: ./${{ matrix.dockerfile }}/Dockerfile
+          tags: ${{ matrix.tag }}:latest
+      - name: Build bundle
+        env:
+          IMAGE: ${{ matrix.tag }}:latest
+          CGO_ENABLED: 0
+        run: |
+           mkdir build
+           poco bundle \
+            --local \
+            --image $IMAGE \
+            --app-name "${{ matrix.tag }}" \
+            --app-version "${GITHUB_SHA::8}" \
+            --output build/${{ matrix.tag }} \
+            ${{ matrix.bundler_opts }}
+          
+           echo "Generating checksum"
+           sha256sum build/${{ matrix.tag }} > build/${{ matrix.tag }}.sha256
+      - name: Upload results
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.tag }}-image
+          path: build
+          if-no-files-found: error
+      - name: "Release"
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: fnkr/github-action-ghr@v1
+        env:
+          GHR_COMPRESS: xz
+          GHR_PATH: build/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
