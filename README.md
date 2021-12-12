@@ -17,6 +17,5 @@ Creating a new bundle is extremely simple. In fact bundles are just standard con
 ```yaml
 - tag: "gimp"
   dockerfile: "gimp"
-  platforms: "linux/amd64"
   bundler_opts: "--entrypoint /usr/bin/gimp --app-store '$HOME/.mos-app/gimp' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
 ```
