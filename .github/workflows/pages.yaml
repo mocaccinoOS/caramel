@@ -9,10 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-     - name: Build bundle
-        run: |
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build bundle
+      run: |
            bash gallery.sh
            mkdir build
            cp -rf gallery.html build/index.html
