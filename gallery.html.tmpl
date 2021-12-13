@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MocaccinoOS Caramel Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+    body {
+        font-family: 'Readex Pro', sans-serif;
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://avatars.githubusercontent.com/u/64648176?s=400&u=60f9fe3fa6c3bd99e0ff420aa7c8cd3c2208f30c&v=4" width="32" height="32">
+          <span>MocaccinoOS</span>
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+    
+          <a class="navbar-item" href="https://www.mocaccino.org" target=_blank>
+            Documentation
+          </a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" target=_blank href="https://packages.mocaccino.org">
+              Packages
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item" target=_blank href="https://github.com/mocaccinoOS">
+                MocaccinoOS @Github
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" target=_blank href="https://quay.io/mocaccino/desktop">
+                Registry
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="navbar-item" target=_blank href="https://github.com/mocaccinoOS/caramel">
+                Caramel @Github
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" target=_blank href="https://github.com/mocaccinoOS/caramel/issues/new">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-link">
+      <div class="hero-body">
+        <p class="title">
+          MocaccinoOS Caramel Gallery
+        </p>
+        <p class="subtitle">
+          Portable, standalone apps for Linux
+        </p>
+      </div>
+    </section>
+  <section class="section">
+    <div class="container">
+
+      <p class="control has-icons-right">
+        <input class="input is-primary is-large" type="text" id="quicksearch" placeholder="firefox, thunderbird ...">
+        <span class="icon is-small is-right">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+      <br>
+    </div>
+      <div class="iso-container" >
+             %TILES%
+      </div>
+   
+    <script>
+      $(function(){
+      // quick search regex
+      var qsRegex;
+      var buttonFilter;
+
+      // init Isotope
+      var $grid = $('.iso-container').isotope({
+        itemSelector: '.element',
+        layoutMode: 'fitRows',
+        filter: function() {
+          var $this = $(this);
+          var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+          var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+          return searchResult && buttonResult;
+        }
+      });
+
+      // use value of search field to filter
+      var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $grid.isotope();
+      }) );
+
+      // debounce so filtering doesn't happen every millisecond
+      function debounce( fn, threshold ) {
+        var timeout;
+        threshold = threshold || 100;
+        return function debounced() {
+          clearTimeout( timeout );
+          var args = arguments;
+          var _this = this;
+          function delayed() {
+            fn.apply( _this, args );
+          }
+          timeout = setTimeout( delayed, threshold );
+        };
+      }
+      });
+    </script>
+  </section>
+  </body>
+</html>
