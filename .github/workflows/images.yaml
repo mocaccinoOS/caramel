@@ -11,54 +11,145 @@ jobs:
     strategy:
       matrix:
         include:
-          - tag: "slack"
-            dockerfile: "slack"
-            bundler_opts: "--entrypoint /usr/bin/slack --app-store '$HOME/.mos-app/slack' --app-mounts /etc/resolv.conf --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "gimp"
-            dockerfile: "gimp"
-            bundler_opts: "--entrypoint /usr/bin/gimp --app-store '$HOME/.mos-app/gimp' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "libreoffice"
-            dockerfile: "libreoffice"
-            bundler_opts: "--entrypoint /usr/bin/libreoffice --app-store '$HOME/.mos-app/libreoffice' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "lutris"
-            dockerfile: "lutris"
-            bundler_opts: "--entrypoint /usr/bin/lutris --app-store '$HOME/.mos-app/lutris' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "teams"
-            dockerfile: "teams"
-            bundler_opts: "--entrypoint /usr/bin/teams --app-store '$HOME/.mos-app/teams' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "zoom"
-            dockerfile: "zoom"
-            bundler_opts: "--entrypoint /usr/bin/zoom --app-store '$HOME/.mos-app/zoom' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "skype"
-            dockerfile: "skype"
-            bundler_opts: "--entrypoint /usr/bin/skype --app-store '$HOME/.mos-app/skype' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "inkscape"
-            dockerfile: "inkscape"
-            bundler_opts: "--entrypoint /usr/bin/inkscape --app-store '$HOME/.mos-app/inkscape' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "pidgin"
-            dockerfile: "pidgin"
-            bundler_opts: "--entrypoint /usr/bin/pidgin --app-store '$HOME/.mos-app/pidgin' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "r-studio"
-            dockerfile: "r-studio"
-            bundler_opts: "--entrypoint /usr/bin/r-studio --app-store '$HOME/.mos-app/r-studio' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "google-chrome"
-            dockerfile: "google-chrome"
-            bundler_opts: "--entrypoint /usr/bin/google-chrome --app-store '$HOME/.mos-app/google-chrome' --app-mounts /etc/resolv.conf --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "teamviewer"
-            dockerfile: "teamviewer"
-            bundler_opts: "--entrypoint /usr/bin/teamviewer --app-store '$HOME/.mos-app/teamviewer' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "vlc"
-            dockerfile: "vlc"
-            bundler_opts: "--entrypoint /usr/bin/vlc --app-store '$HOME/.mos-app/vlc' --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "firefox"
-            dockerfile: "firefox"
-            bundler_opts: "--entrypoint /usr/bin/firefox --app-store '$HOME/.mos-app/firefox' --app-mounts /etc --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "thunderbird"
-            dockerfile: "thunderbird"
-            bundler_opts: "--entrypoint /usr/bin/thunderbird --app-store '$HOME/.mos-app/thunderbird' --app-mounts /etc --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
-          - tag: "kodi"
-            dockerfile: "kodi"
-            bundler_opts: "--entrypoint /usr/bin/kodi --app-store '$HOME/.mos-app/kodi' --app-mounts /home --app-mounts /etc --app-mounts /sys --app-mounts /tmp --app-mounts /run"
+          - name: "slack"
+            bundler_opts: >-
+              --entrypoint /usr/bin/slack 
+              --app-mounts /etc/resolv.conf 
+              --app-mounts /dev 
+              --app-mounts /home 
+              --app-mounts /sys
+              --app-mounts /tmp 
+              --app-mounts /run
+          - name: "gimp"
+            bundler_opts: >-
+              --entrypoint /usr/bin/gimp 
+              --app-mounts /home 
+              --app-mounts /sys 
+              --app-mounts /tmp 
+              --app-mounts /run
+          - name: "libreoffice"
+            bundler_opts: >-
+              --entrypoint /usr/bin/libreoffice
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "lutris"
+            bundler_opts: >-
+              --entrypoint /usr/bin/lutris
+              --app-mounts /dev
+              --app-mounts /etc/resolv.conf
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "teams"
+            bundler_opts: >-
+              --entrypoint /usr/bin/teams
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "zoom"
+            bundler_opts: >-
+              --entrypoint /usr/bin/zoom
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /etc/resolv.conf
+              --app-mounts /run
+          - name: "skype"
+            bundler_opts: >-
+              --entrypoint /usr/bin/skype
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "inkscape"
+            bundler_opts: >-
+              --entrypoint /usr/bin/inkscape
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "pidgin"
+            bundler_opts: >-
+              --entrypoint /usr/bin/pidgin
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf 
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "r-studio"
+            bundler_opts: >-
+              --entrypoint /usr/bin/r-studio
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "google-chrome"
+            bundler_opts: >-
+              --entrypoint /usr/bin/google-chrome
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "teamviewer"
+            bundler_opts: >-
+              --entrypoint /usr/bin/teamviewer
+              --app-mounts /dev
+              --app-mounts /etc/resolv.conf
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "vlc"
+            bundler_opts: >-
+              --entrypoint /usr/bin/vlc
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /etc/resolv.conf
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "firefox"
+            bundler_opts: >-
+              --entrypoint /usr/bin/firefox
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "thunderbird"
+            bundler_opts: >-
+              --entrypoint /usr/bin/thunderbird
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /etc/resolv.conf
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "kodi"
+            bundler_opts: >-
+              --entrypoint /usr/bin/kodi
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+              --app-mounts /etc/resolv.conf
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -75,29 +166,29 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: ./${{ matrix.dockerfile }}
-          file: ./${{ matrix.dockerfile }}/Dockerfile
-          tags: ${{ matrix.tag }}:latest
+          context: ./${{ matrix.name }}
+          file: ./${{ matrix.name }}/Dockerfile
+          tags: ${{ matrix.name }}:latest
       - name: Build bundle
         env:
-          IMAGE: ${{ matrix.tag }}:latest
+          IMAGE: ${{ matrix.name }}:latest
           CGO_ENABLED: 0
         run: |
            mkdir build
            poco bundle \
             --local \
             --image $IMAGE \
-            --app-name "${{ matrix.tag }}" \
+            --app-name "${{ matrix.name }}" \
             --app-version "${GITHUB_SHA::8}" \
-            --output build/${{ matrix.tag }}-${GITHUB_SHA::8}-amd64 \
+            --app-store '$HOME/.mos-app/${{ matrix.name }}' \
+            --output build/${{ matrix.name }}-${GITHUB_SHA::8}-amd64 \
             ${{ matrix.bundler_opts }}
-          
            echo "Generating checksum"
-           sha256sum build/${{ matrix.tag }}-${GITHUB_SHA::8}-amd64 > build/${{ matrix.tag }}-${GITHUB_SHA::8}-amd64.sha256
+           sha256sum build/${{ matrix.name }}-${GITHUB_SHA::8}-amd64 > build/${{ matrix.name }}-${GITHUB_SHA::8}-amd64.sha256
       - name: Upload results
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.tag }}-amd64
+          name: ${{ matrix.name }}-amd64
           path: build
           if-no-files-found: error
       - name: Release
