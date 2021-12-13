@@ -22,5 +22,6 @@
 # results pending
 FROM fedora:latest
 
+RUN yum install wget -y
 RUN wget https://www.r-studio.com/downloads/RStudio4_x64.rpm
 RUN rpm -Uhv RStudio4_x64.rpm
