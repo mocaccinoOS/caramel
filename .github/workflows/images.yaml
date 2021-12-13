@@ -11,6 +11,9 @@ jobs:
     strategy:
       matrix:
         include:
+          - tag: "slack"
+            dockerfile: "slack"
+            bundler_opts: "--entrypoint /usr/bin/slack --app-store '$HOME/.mos-app/slack' --app-mounts /etc/resolv.conf --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
           - tag: "gimp"
             dockerfile: "gimp"
             bundler_opts: "--entrypoint /usr/bin/gimp --app-store '$HOME/.mos-app/gimp' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
