@@ -68,9 +68,9 @@ jobs:
               --app-mounts /etc/resolv.conf
               --app-mounts /tmp
               --app-mounts /run
-          - name: "snapd"
+          - name: "snap"
             bundler_opts: >-
-              --entrypoint /usr/bin/snapd
+              --entrypoint /usr/bin/snap
               --app-mounts /dev
               --app-mounts /home
               --app-mounts /sys
