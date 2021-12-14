@@ -28,6 +28,14 @@ jobs:
               --app-mounts /sys
               --app-mounts /tmp
               --app-mounts /run
+          - name: "clamtk"
+            bundler_opts: >-
+              --entrypoint /usr/bin/clamtk
+              --app-mounts /etc/resolv.conf
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
           - name: "gimp"
             bundler_opts: >-
               --entrypoint /usr/bin/gimp 
