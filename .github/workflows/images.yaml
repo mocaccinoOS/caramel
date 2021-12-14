@@ -59,6 +59,15 @@ jobs:
               --app-mounts /sys
               --app-mounts /tmp
               --app-mounts /run
+          - name: "shortcut"
+            bundler_opts: >-
+              --entrypoint /usr/bin/shortcut
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf
+              --app-mounts /tmp
+              --app-mounts /run
           - name: "teams"
             bundler_opts: >-
               --entrypoint /usr/bin/teams
