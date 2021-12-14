@@ -20,6 +20,14 @@ jobs:
               --app-mounts /sys
               --app-mounts /tmp 
               --app-mounts /run
+          - name: "balsa"
+            bundler_opts: >-
+              --entrypoint /usr/bin/balsa
+              --app-mounts /etc/resolv.conf
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
           - name: "gimp"
             bundler_opts: >-
               --entrypoint /usr/bin/gimp 

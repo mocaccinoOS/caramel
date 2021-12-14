@@ -5,7 +5,7 @@
 # RUN swupd bundle-add -y R-rstudio git
 
 # === Ubuntu ===
-# results in a 700MB image
+# results in a 700 MB image
 # FROM ubuntu:focal
 # ENV DEBIAN_FRONTEND noninteractive
 
@@ -19,7 +19,7 @@
 #    apt install -y ./rsuitecli_0.37.253-1_all.deb && rsuite install && apt install -y ./rstudio-2021.09.1-372-amd64.deb
 
 # === Fedora ===
-# results pending
+# results in a 694 MB image
 FROM fedora:latest
 
 RUN yum install wget git R yum-utils -y
