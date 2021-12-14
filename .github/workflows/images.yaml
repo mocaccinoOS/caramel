@@ -68,6 +68,15 @@ jobs:
               --app-mounts /etc/resolv.conf
               --app-mounts /tmp
               --app-mounts /run
+          - name: "snapd"
+            bundler_opts: >-
+              --entrypoint /usr/bin/snapd
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /etc/resolv.conf
+              --app-mounts /tmp
+              --app-mounts /run
           - name: "teams"
             bundler_opts: >-
               --entrypoint /usr/bin/teams

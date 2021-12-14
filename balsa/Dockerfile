@@ -1,5 +1,5 @@
 # === Debian Linux ===
-# image is broken
+# image is broken 509 MB
 # FROM debian:bookworm
 
 # RUN apt-get update
