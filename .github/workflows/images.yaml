@@ -141,7 +141,7 @@ jobs:
               --app-mounts /run
           - name: "teamviewer"
             bundler_opts: >-
-              --entrypoint /usr/bin/teamviewer
+              --entrypoint /startup.sh
               --app-mounts /dev
               --app-mounts /etc/resolv.conf
               --app-mounts /home
