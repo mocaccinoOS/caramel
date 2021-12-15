@@ -19,3 +19,13 @@ Creating a new bundle is extremely simple. In fact bundles are just standard con
   dockerfile: "gimp"
   bundler_opts: "--entrypoint /usr/bin/gimp --app-store '$HOME/.mos-app/gimp' --app-mounts /dev --app-mounts /home --app-mounts /sys --app-mounts /tmp --app-mounts /run"
 ```
+
+## Run a bundle
+
+Running a bundle is as simple as downloading the binary from the release page and running the binary as usual.
+
+On the first run the program will uncompress itself into the bundle store folder (by default, `$HOME/.mos-app/<bundle name>`)
+
+## Uninstall
+
+To remove a bundle simply run `./bundle uninstall` or either remove the content from `$HOME/.mos-app`.
