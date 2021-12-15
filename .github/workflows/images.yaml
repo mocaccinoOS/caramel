@@ -59,9 +59,9 @@ jobs:
               --app-mounts /sys
               --app-mounts /tmp
               --app-mounts /run
-          - name: "shortcut"
+          - name: "shotcut"
             bundler_opts: >-
-              --entrypoint /usr/bin/shortcut
+              --entrypoint /usr/bin/shotcut
               --app-mounts /dev
               --app-mounts /home
               --app-mounts /sys
