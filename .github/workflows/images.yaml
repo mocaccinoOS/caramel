@@ -193,9 +193,9 @@ jobs:
             go-version: '^1.17'
       - name: Build and install deps
         run: |
-           wget https://github.com/mudler/poco/releases/download/v0.2.0/poco-v0.2.0-Linux-x86_64.tar.gz
-           tar xvf poco-v0.2.0-Linux-x86_64.tar.gz
-           sudo cp -rfv poco /usr/bin/
+           curl https://get.mocaccino.org/luet/get_luet_root.sh | sudo sh
+           sudo luet install -y repository/mocaccino-extra
+           sudo luet install -y utils/poco
       - name: Build
         uses: docker/build-push-action@v2
         with:
