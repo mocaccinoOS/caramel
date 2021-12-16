@@ -9,3 +9,10 @@ RUN chmod +x /bin/tini
 
 RUN wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && \
     apt install -y ./teamviewer_amd64.deb
+
+COPY rootfs /
+
+# Remove /var/run symlink, so supervisord sock is happy
+RUN rm -rf /var/run
+
+RUN mkdir /var/run
