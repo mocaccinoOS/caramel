@@ -60,7 +60,7 @@ jobs:
               --app-mounts /run
           - name: "memccache"
             bundler_opts: >-
-              --entrypoint /usr/bin/memccache
+              --entrypoint /usr/local/bin/memccache
           - name: "lutris"
             bundler_opts: >-
               --entrypoint /usr/bin/lutris
