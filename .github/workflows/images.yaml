@@ -61,15 +61,6 @@ jobs:
           - name: "memccache"
             bundler_opts: >-
               --entrypoint /usr/local/bin/memccache
-          - name: "lutris"
-            bundler_opts: >-
-              --entrypoint /usr/bin/lutris
-              --app-mounts /dev
-              --app-mounts /etc/resolv.conf
-              --app-mounts /home
-              --app-mounts /sys
-              --app-mounts /tmp
-              --app-mounts /run
           - name: "shotcut"
             bundler_opts: >-
               --entrypoint /usr/bin/shotcut
