@@ -23,6 +23,6 @@
 FROM fedora:latest
 
 RUN yum install wget git R yum-utils -y
-RUN wget https://www.r-studio.com/downloads/RStudio4_x64.rpm
-RUN yum localinstall RStudio4_x64.rpm -y
-RUN rm -f RStudio4_x64.rpm
+RUN wget https://www.r-studio.com/downloads/RStudio5_x64.rpm
+RUN yum localinstall RStudio5_x64.rpm -y
+RUN rm -f RStudio5_x64.rpm
