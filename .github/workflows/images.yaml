@@ -188,9 +188,9 @@ jobs:
               --app-mounts /etc/resolv.conf
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
             go-version: '^1.17'
       - name: Build and install deps
@@ -199,7 +199,7 @@ jobs:
            sudo luet install -y repository/mocaccino-extra
            sudo luet install -y utils/poco
       - name: Build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: ./${{ matrix.name }}
@@ -222,7 +222,7 @@ jobs:
            echo "Generating checksum"
            sha256sum build/${{ matrix.name }}-${GITHUB_SHA::8}-amd64 > build/${{ matrix.name }}-${GITHUB_SHA::8}-amd64.sha256
       - name: Upload results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.name }}-amd64
           path: build
