@@ -51,13 +51,6 @@ jobs:
               --app-mounts /sys 
               --app-mounts /tmp 
               --app-mounts /run
-          - name: "libreoffice"
-            bundler_opts: >-
-              --entrypoint /usr/bin/libreoffice
-              --app-mounts /home
-              --app-mounts /sys
-              --app-mounts /tmp
-              --app-mounts /run
           - name: "memccache"
             bundler_opts: >-
               --entrypoint /usr/local/bin/memccache
