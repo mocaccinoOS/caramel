@@ -79,15 +79,6 @@ jobs:
               --app-mounts /etc/resolv.conf
               --app-mounts /tmp
               --app-mounts /run
-          - name: "teams"
-            bundler_opts: >-
-              --entrypoint /usr/bin/teams
-              --app-mounts /dev
-              --app-mounts /home
-              --app-mounts /sys
-              --app-mounts /etc/resolv.conf
-              --app-mounts /tmp
-              --app-mounts /run
           - name: "zoom"
             bundler_opts: >-
               --entrypoint /usr/bin/zoom
