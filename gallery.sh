@@ -2,7 +2,7 @@
 
 releases=$(curl -s https://api.github.com/repos/mocaccinoOS/caramel/releases)
 
-declare -A app_logos=( 
+declare -A app_logos=(
     ["balsa"]="https://pawsa.fedorapeople.org/balsa/images/balsa.jpg"
     ["clamtk"]="https://upload.wikimedia.org/wikipedia/commons/c/c1/Clamtk_logo.png" 
     ["firefox"]="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg"
@@ -18,15 +18,14 @@ declare -A app_logos=(
     ["skype"]="https://secure.skypeassets.com/content/dam/scom/legal/brand-guidelines/skype-icon.svg"
     ["slack"]="https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_slack-brand-refresh_header-1.png"
     ["snap"]="https://assets.ubuntu.com/v1/7f93bb62-snapcraft-logo--web-white-text.svg"
-    ["teams"]="https://download.logo.wine/logo/Microsoft_Teams/Microsoft_Teams-Logo.wine.png"
     ["teamviewer"]="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/TeamViewer_Company_RGB.svg"
     ["thunderbird"]="https://upload.wikimedia.org/wikipedia/commons/e/e1/Thunderbird_Logo%2C_2018.svg"
     ["vlc"]="https://upload.wikimedia.org/wikipedia/commons/3/38/VLC_icon.png"
     ["zoom"]="https://st1.zoom.us/static/5.2.3509/image/new/ZoomLogo.png"
 )
 
-declare -A app_link=( 
-    ["balsa"]="https://pawsa.fedorapeople.org/balsa/" 
+declare -A app_link=(
+    ["balsa"]="https://pawsa.fedorapeople.org/balsa/"
     ["clamtk"]="https://gitlab.com/dave_m/clamtk/"
     ["firefox"]="https://www.mozilla.org/"
     ["gimp"]="https://www.gimp.org/"
@@ -41,7 +40,6 @@ declare -A app_link=(
     ["skype"]="https://www.skype.com/"
     ["slack"]="https://slack.com/"
     ["snap"]="https://snapcraft.io/"
-    ["teams"]="https://www.microsoft.com/en-us/microsoft-teams/download-app"
     ["teamviewer"]="https://www.teamviewer.com/"
     ["thunderbird"]="https://www.thunderbird.net/"
     ["vlc"]="https://www.videolan.org/vlc/"
