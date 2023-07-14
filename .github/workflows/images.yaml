@@ -13,21 +13,12 @@ jobs:
         include:
           - name: "slack"
             bundler_opts: >-
-              --entrypoint /usr/bin/slack
-              --app-mounts /etc/resolv.conf
-              --app-mounts /dev
-              --app-mounts /home
+              --entrypoint /usr/bin/slack 
+              --app-mounts /etc/resolv.conf 
+              --app-mounts /dev 
+              --app-mounts /home 
               --app-mounts /sys
-              --app-mounts /tmp
-              --app-mounts /run
-          - name: "stacer"
-            bundler_opts: >-
-              --entrypoint /usr/bin/stacer
-              --app-mounts /etc/resolv.conf
-              --app-mounts /dev
-              --app-mounts /home
-              --app-mounts /sys
-              --app-mounts /tmp
+              --app-mounts /tmp 
               --app-mounts /run
           - name: "balsa"
             bundler_opts: >-
