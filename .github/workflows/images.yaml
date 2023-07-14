@@ -46,7 +46,7 @@ jobs:
               --app-mounts /run
           - name: "decentr"
             bundler_opts: >-
-              --entrypoint /usr/bin/decentr-browser-stable
+              --entrypoint /opt/decentr.org/decentr/decentr-browser
               --app-mounts /opt
               --app-mounts /etc/resolv.conf
               --app-mounts /home
