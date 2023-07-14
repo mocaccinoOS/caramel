@@ -18,7 +18,7 @@ declare -A app_logos=(
     ["skype"]="https://secure.skypeassets.com/content/dam/scom/legal/brand-guidelines/skype-icon.svg"
     ["slack"]="https://d34u8crftukxnk.cloudfront.net/slackpress/prod/sites/6/2019-01_BrandRefresh_slack-brand-refresh_header-1.png"
     ["snap"]="https://assets.ubuntu.com/v1/7f93bb62-snapcraft-logo--web-white-text.svg"
-    ["teamviewer"]="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/TeamViewer_Company_RGB.svg"
+    ["teamviewer"]="https://companieslogo.com/img/orig/TMV.DE-34387094.png?t=1681359538"
     ["thunderbird"]="https://upload.wikimedia.org/wikipedia/commons/e/e1/Thunderbird_Logo%2C_2018.svg"
     ["thonny"]="https://upload.wikimedia.org/wikipedia/commons/e/e2/Thonny_logo.png"
     ["vlc"]="https://upload.wikimedia.org/wikipedia/commons/3/38/VLC_icon.png"
