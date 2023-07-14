@@ -13,12 +13,12 @@ jobs:
         include:
           - name: "slack"
             bundler_opts: >-
-              --entrypoint /usr/bin/slack 
-              --app-mounts /etc/resolv.conf 
-              --app-mounts /dev 
-              --app-mounts /home 
+              --entrypoint /usr/bin/slack
+              --app-mounts /etc/resolv.conf
+              --app-mounts /dev
+              --app-mounts /home
               --app-mounts /sys
-              --app-mounts /tmp 
+              --app-mounts /tmp
               --app-mounts /run
           - name: "balsa"
             bundler_opts: >-
@@ -46,10 +46,10 @@ jobs:
               --app-mounts /run
           - name: "gimp"
             bundler_opts: >-
-              --entrypoint /usr/bin/gimp 
-              --app-mounts /home 
-              --app-mounts /sys 
-              --app-mounts /tmp 
+              --entrypoint /usr/bin/gimp
+              --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
               --app-mounts /run
           - name: "memccache"
             bundler_opts: >-
@@ -104,7 +104,7 @@ jobs:
               --app-mounts /dev
               --app-mounts /home
               --app-mounts /sys
-              --app-mounts /etc/resolv.conf 
+              --app-mounts /etc/resolv.conf
               --app-mounts /tmp
               --app-mounts /run
           - name: "r-studio"
@@ -131,6 +131,15 @@ jobs:
               --app-mounts /dev
               --app-mounts /etc/resolv.conf
               --app-mounts /home
+              --app-mounts /sys
+              --app-mounts /tmp
+              --app-mounts /run
+          - name: "thonny"
+            bundler_opts: >-
+              --entrypoint /usr/bin/thonny
+              --app-mounts /dev
+              --app-mounts /home
+              --app-mounts /etc/resolv.conf
               --app-mounts /sys
               --app-mounts /tmp
               --app-mounts /run
