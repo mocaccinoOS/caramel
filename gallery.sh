@@ -4,7 +4,8 @@ releases=$(curl -s https://api.github.com/repos/mocaccinoOS/caramel/releases)
 
 declare -A app_logos=(
     ["balsa"]="https://pawsa.fedorapeople.org/balsa/images/balsa.jpg"
-    ["clamtk"]="https://upload.wikimedia.org/wikipedia/commons/c/c1/Clamtk_logo.png" 
+    ["bluefish"]="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bluefish-icon.svg/480px-Bluefish-icon.svg.png"
+    ["clamtk"]="https://upload.wikimedia.org/wikipedia/commons/c/c1/Clamtk_logo.png"
     ["firefox"]="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg"
     ["gimp"]="https://www.gimp.org/images/frontpage/wilber-big.png"
     ["chrome"]="https://www.google.com/chrome/static/images/chrome-logo.svg"
@@ -25,6 +26,7 @@ declare -A app_logos=(
 
 declare -A app_link=(
     ["balsa"]="https://pawsa.fedorapeople.org/balsa/"
+    ["bluefish"]="https://bluefish.openoffice.nl/index.html"
     ["clamtk"]="https://gitlab.com/dave_m/clamtk/"
     ["firefox"]="https://www.mozilla.org/"
     ["gimp"]="https://www.gimp.org/"
