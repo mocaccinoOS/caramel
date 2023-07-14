@@ -20,6 +20,7 @@ declare -A app_logos=(
     ["snap"]="https://assets.ubuntu.com/v1/7f93bb62-snapcraft-logo--web-white-text.svg"
     ["teamviewer"]="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/TeamViewer_Company_RGB.svg"
     ["thunderbird"]="https://upload.wikimedia.org/wikipedia/commons/e/e1/Thunderbird_Logo%2C_2018.svg"
+    ["thonny"]="https://upload.wikimedia.org/wikipedia/commons/e/e2/Thonny_logo.png"
     ["vlc"]="https://upload.wikimedia.org/wikipedia/commons/3/38/VLC_icon.png"
     ["zoom"]="https://st1.zoom.us/static/5.2.3509/image/new/ZoomLogo.png"
 )
@@ -42,6 +43,7 @@ declare -A app_link=(
     ["snap"]="https://snapcraft.io/"
     ["teamviewer"]="https://www.teamviewer.com/"
     ["thunderbird"]="https://www.thunderbird.net/"
+    ["thonny"]="https://thonny.org/"
     ["vlc"]="https://www.videolan.org/vlc/"
     ["zoom"]="https://zoom.us/"
 )
