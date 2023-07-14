@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MocaccinoOS Caramel Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+    body {
+        font-family: 'Readex Pro', sans-serif;
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://www.mocaccino.org" target=_blank>
+          <img src="https://avatars.githubusercontent.com/u/64648176?s=400&u=60f9fe3fa6c3bd99e0ff420aa7c8cd3c2208f30c&v=4" width="32" height="32">
+          <span>MocaccinoOS</span>
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="https://mocaccinoos.github.io/caramel/">
+            Home
+          </a>
+    
+          <a class="navbar-item" href=https://www.mocaccino.org/docs/" target=_blank>
+            Documentation
+          </a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" target=_blank href="https://packages.mocaccino.org">
+              Packages
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item" target=_blank href="https://github.com/mocaccinoOS">
+                MocaccinoOS @Github
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" target=_blank href="https://quay.io/mocaccino/desktop">
+                Registry
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="navbar-item" target=_blank href="https://github.com/mocaccinoOS/caramel">
+                Caramel @Github
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" target=_blank href="https://github.com/mocaccinoOS/caramel/issues/new">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-link">
+      <div class="hero-body">
+        <p class="title">
+          MocaccinoOS Caramel Gallery
+        </p>
+        <p class="subtitle">
+          Portable, standalone apps for Linux
+        </p>
+      </div>
+    </section>
+  <section class="section">
+    <div class="container">
+
+      <p class="control has-icons-right">
+        <input class="input is-primary is-large" type="text" id="quicksearch" placeholder="firefox, thunderbird ...">
+        <span class="icon is-small is-right">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+      <br>
+    </div>
+      <div class="iso-container" >
+             <div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.mozilla.org/" target=_blank><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" width=120></a></center> <p class="title">firefox-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:07:35Z</p> <p><strong>166Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/firefox-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/firefox-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.gimp.org/" target=_blank><img src="https://www.gimp.org/images/frontpage/wilber-big.png" width=120></a></center> <p class="title">gimp-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:11:07Z</p> <p><strong>335Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/gimp-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/gimp-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.google.com/intl/en_us/chrome/" target=_blank><img src="https://www.google.com/chrome/static/images/chrome-logo.svg" width=120></a></center> <p class="title">google-chrome-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:12:43Z</p> <p><strong>454Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/google-chrome-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/google-chrome-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://inkscape.org/" target=_blank><img src="https://media.inkscape.org/static/images/inkscape-logo.svg" width=120></a></center> <p class="title">inkscape-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:07:41Z</p> <p><strong>155Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/inkscape-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/inkscape-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://kodi.tv" target=_blank><img src="https://kodi.tv/images/kodi-logo-with-text.svg" width=120></a></center> <p class="title">kodi-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:11:01Z</p> <p><strong>328Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/kodi-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/kodi-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.pidgin.im/" target=_blank><img src="https://www.pidgin.im/images/logo.png" width=120></a></center> <p class="title">pidgin-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:14:06Z</p> <p><strong>486Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/pidgin-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/pidgin-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="" target=_blank><img src="" width=120></a></center> <p class="title">rsuite-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:29:21Z</p> <p><strong>727Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/rsuite-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/rsuite-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.skype.com/" target=_blank><img src="https://secure.skypeassets.com/content/dam/scom/legal/brand-guidelines/skype-icon.svg" width=120></a></center> <p class="title">skype-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:17:10Z</p> <p><strong>317Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/skype-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/skype-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="" target=_blank><img src="" width=120></a></center> <p class="title">teams-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:13:24Z</p> <p><strong>280Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/teams-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/teams-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.teamviewer.com/" target=_blank><img src="https://companieslogo.com/img/orig/TMV.DE-34387094.png?t=1681359538" width=120></a></center> <p class="title">teamviewer-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:16:43Z</p> <p><strong>379Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/teamviewer-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/teamviewer-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.thunderbird.net/" target=_blank><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Thunderbird_Logo%2C_2018.svg" width=120></a></center> <p class="title">thunderbird-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:12:30Z</p> <p><strong>161Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/thunderbird-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/thunderbird-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://www.videolan.org/vlc/" target=_blank><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/VLC_icon.png" width=120></a></center> <p class="title">vlc-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:19:02Z</p> <p><strong>478Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/vlc-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/vlc-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div><div class="element box has-background-grey-light has-text-light px-1 m-3"> <center><a href="https://zoom.us/" target=_blank><img src="https://st1.zoom.us/static/5.2.3509/image/new/ZoomLogo.png" width=120></a></center> <p class="title">zoom-57cf38ce-amd64</p> <p class="subtitle">2021-12-12T23:25:11Z</p> <p><strong>525Mi</strong></p> <p> <a class="button is-link" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/zoom-57cf38ce-amd64" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> Download </span> </a> <a class="button is-secondary" href="https://github.com/mocaccinoOS/caramel/releases/download/v0.1/zoom-57cf38ce-amd64.sha256" _target="blank" > <span class="icon"> <i class="fas fa-download"></i> </span> <span> SHA </span> </a> </p> <!-- <figure class="image is-4by3"> <img src="https://bulma.io/images/placeholders/640x480.png"> </figure> --> </div>
+      </div>
+   
+    <script>
+      $(function(){
+      // quick search regex
+      var qsRegex;
+      var buttonFilter;
+
+      // init Isotope
+      var $grid = $('.iso-container').isotope({
+        itemSelector: '.element',
+        layoutMode: 'fitRows',
+        filter: function() {
+          var $this = $(this);
+          var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+          var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+          return searchResult && buttonResult;
+        }
+      });
+
+      // use value of search field to filter
+      var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $grid.isotope();
+      }) );
+
+      // debounce so filtering doesn't happen every millisecond
+      function debounce( fn, threshold ) {
+        var timeout;
+        threshold = threshold || 100;
+        return function debounced() {
+          clearTimeout( timeout );
+          var args = arguments;
+          var _this = this;
+          function delayed() {
+            fn.apply( _this, args );
+          }
+          timeout = setTimeout( delayed, threshold );
+        };
+      }
+      });
+    </script>
+  </section>
+  </body>
+</html>
